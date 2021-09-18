@@ -1,21 +1,20 @@
 package com.distributed.lab1.a;
 
-record SliderValueChanger(CommonResource resToChange, int valueChangeTo, int timeToSleep) implements Runnable {
+import javax.swing.*;
+
+record SliderValueChanger(JSlider slider, int valueChangeTo, int timeToSleep) implements Runnable {
 
     @Override
     public synchronized void run() {
-        var slider = resToChange.getSlider();
-        var diff = valueChangeTo > slider.getValue() ? 1 : -1;
-        while (slider.getValue() != valueChangeTo) {
-            try {
+        try {
+            while (!Thread.currentThread().isInterrupted()) {
+                var diff = Integer.compare(valueChangeTo, slider.getValue());
+
                 //noinspection BusyWait
                 Thread.sleep(timeToSleep);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                slider.setValue(slider.getValue() + diff);
             }
-            if (resToChange.isCompleted()) return;
-            slider.setValue(slider.getValue() + diff);
+        } catch (InterruptedException ignored) {
         }
-        resToChange.complete();
     }
 }

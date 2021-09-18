@@ -2,39 +2,49 @@ package com.distributed.lab1.a;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.ArrayList;
 
 public class Gui {
     private final JFrame frame;
     private JSlider slider;
     private Thread thread1;
     private Thread thread2;
+    private JButton start;
+    private JButton stop;
 
     public Gui() {
         frame = new JFrame("Test frame");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                interruptThreads();
-            }
-        });
+        frame.setLayout(new FlowLayout());
         frame.setPreferredSize(new Dimension(200, 100));
         frame.setVisible(true);
         frame.setResizable(false);
-        frame.pack();
         addSlider();
+        addButtons();
+
+        frame.pack();
     }
 
-    public void runThreads(int priority1, int priority2) {
-        thread1 = new Thread(new SliderValueChanger(slider, 10, priority1 * 100));
-        thread1.setDaemon(true);
-        thread1.start();
+    private void addButtons() {
+        start = new JButton("start");
+        start.addActionListener(e -> runThreads(10, 1));
+        frame.add(start);
 
-        thread2 = new Thread(new SliderValueChanger(slider, 90, priority2 * 100));
+        stop = new JButton("stop");
+        stop.addActionListener(e -> interruptThreads());
+        frame.add(stop);
+    }
+    
+
+    public void runThreads(int priority1, int priority2) {
+        thread1 = new Thread(new SliderValueChanger(slider, 10, 70));
+        thread1.setDaemon(true);
+        thread1.setPriority(priority1);
+
+        thread2 = new Thread(new SliderValueChanger(slider, 90, 70));
         thread2.setDaemon(true);
+        thread2.setPriority(priority2);
+
+        thread1.start();
         thread2.start();
     }
 

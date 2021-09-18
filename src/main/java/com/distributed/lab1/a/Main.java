@@ -4,6 +4,5 @@ public class Main {
 
     public static void main(String[] args) {
         var gui = new Gui();
-        gui.runThreads(1, 5);
     }
 }

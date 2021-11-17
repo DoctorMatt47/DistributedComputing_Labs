@@ -18,16 +18,15 @@ public class BeeFlockTask implements Runnable {
     public void run() {
         printMessage("Search for winnie started.");
         if (forest.checkWinnie(x, y)) {
-            printMessage("Winnie was found. We proceed to punish.");
+            printMessage("Winnie was found. Proceed to punish.");
             tasks.setFoundPooh();
             return;
         }
-        printMessage("Winnie was not found");
-        printMessage("Returning to the hive");
+        printMessage("Winnie was not found. Returning to the hive");
     }
 
     private void printMessage(String message) {
-        System.out.printf("Bee flock %d at (%d; %d): %s%n", Thread.currentThread().getId(), x, y, message);
+        System.out.printf("Bee flock %d at (%d, %d): %s%n", Thread.currentThread().getId(), x, y, message);
     }
 }
 

@@ -1,4 +1,4 @@
-package com.distributed.lab4.c;
+package com.distributed.lab4.b;
 
 import java.util.Random;
 
@@ -14,21 +14,22 @@ public class Nature implements Runnable {
     public void run() {
         while (true) {
             try {
-                Thread.sleep(200);
-                System.err.println("[Nature] Woke up, getting write lock...");
+                Thread.sleep(1000);
+                System.out.println("Nature: Waking up.");
                 garden.getLocker().lockWriting();
             } catch (InterruptedException ignored) {}
 
             int x = rng.nextInt(garden.getWidth());
             int y = rng.nextInt(garden.getHeight());
-            System.err.printf("[Nature] Plant (%d; %d) is wilting...\n", x, y);
+            System.out.printf("    Nature: Plant (%d; %d) is wilting\n", x, y);
 
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ignored) {}
             garden.setPlantFreshness(x, y, false);
-            System.err.printf("[Nature] Plant (%d; %d) has wilted.\n", x, y);
+            System.out.printf("    Nature: Plant (%d; %d) has wilted.\n", x, y);
 
+            System.out.println("Nature: Going to sleep.");
             garden.getLocker().unlockWriting();
         }
     }

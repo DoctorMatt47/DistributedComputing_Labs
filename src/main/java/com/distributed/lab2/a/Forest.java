@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Forest {
     public static int MAX_SLEEP_TIME = 5000;
-    public static int HEIGHT = 5;
-    public static int WIDTH = 5;
+    public static int HEIGHT = 4;
+    public static int WIDTH = 4;
 
     private final int winnie_x;
     private final int winnie_y;

@@ -1,9 +1,9 @@
 package com.distributed.lab3.c;
 
-public class MySemaphore {
+public class CustomSemaphore {
     private volatile int permits;
 
-    public MySemaphore(int permits) {
+    public CustomSemaphore(int permits) {
         this.permits = permits;
     }
 

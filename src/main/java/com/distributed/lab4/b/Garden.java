@@ -1,4 +1,4 @@
-package com.distributed.lab4.c;
+package com.distributed.lab4.b;
 
 
 public class Garden {

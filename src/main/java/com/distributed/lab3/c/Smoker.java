@@ -33,6 +33,7 @@ public class Smoker implements Runnable {
             for (var ingredientType : Ingredient.values()) {
                 if (ingredientType != myIngredient) {
                     try {
+                        // Takes ingredients from table
                         SmokersMediator.ingredients.get(ingredientType).acquire();
                     } catch (InterruptedException ignored) {
                     }

@@ -4,9 +4,9 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SmokersMediator {
-    public static final MySemaphore tableReady = new MySemaphore(1);
-    public static final MySemaphore smokingDone = new MySemaphore(1);
-    public static final Map<Ingredient, MySemaphore> ingredients = new ConcurrentHashMap<>();
+    public static final CustomSemaphore tableReady = new CustomSemaphore(1);
+    public static final CustomSemaphore smokingDone = new CustomSemaphore(1);
+    public static final Map<Ingredient, CustomSemaphore> ingredients = new ConcurrentHashMap<>();
     public static final Runnable dealer = () -> {
         while (true) {
             try {

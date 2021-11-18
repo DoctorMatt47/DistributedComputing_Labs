@@ -23,7 +23,7 @@ public class BagOfTasks {
         return task;
     }
 
-    public void setFoundPooh() {
+    public void setFoundWinnie() {
         isWinnieFound = true;
     }
 }

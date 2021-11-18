@@ -1,5 +1,7 @@
 package com.distributed.lab7;
 
+import java.util.stream.IntStream;
+
 public class Matrix {
     public static double[][] generateMatrix(int size, int maxElem) {
         double[][] matrix = new double[size][];
@@ -22,16 +24,23 @@ public class Matrix {
         return true;
     }
 
-    public static double[][] multiplication(double[][] left, double[][] right) {
-        var matrixToReturn = new double[left.length][];
+    public static void multiplication(double[][] left, double[][] right, double[][] nativeResult) {
         for (int i = 0; i < left.length; i++) {
-            matrixToReturn[i] = new double[left[i].length];
             for (int j = 0; j < left[i].length; j++) {
                 for (int k = 0; k < left[i].length; k++) {
-                    matrixToReturn[i][j] += left[i][k] * right[k][j];
+                    nativeResult[i][j] += left[i][k] * right[k][j];
                 }
             }
         }
-        return matrixToReturn;
+    }
+
+    public static void parallelMultiplication(double[][] left, double[][] right, double[][] parallelResult) {
+        IntStream.range(0, left.length).parallel().forEach(i -> {
+            for (int j = 0; j < left.length; j++) {
+                for (int k = 0; k < left.length; k++) {
+                    parallelResult[i][j] += left[i][k] * right[k][j];
+                }
+            }
+        });
     }
 }

@@ -8,7 +8,7 @@ public class MatrixMultiplicationTask extends RecursiveAction {
     public static double[][] left;
     public static double[][] right;
 
-    private int i;
+    private final int i;
 
     public MatrixMultiplicationTask() {
         i = 0;

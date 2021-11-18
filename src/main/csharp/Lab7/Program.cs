@@ -7,7 +7,7 @@ namespace Lab7
 {
     internal class Program
     {
-        private const int Size = 512;
+        private const int Size = 1024;
         private const int MaxElem = 10;
         
         private static void Main(string[] args)

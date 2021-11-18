@@ -19,7 +19,7 @@ public class BeeFlockTask implements Runnable {
         printMessage("Search for winnie started.");
         if (forest.checkWinnie(x, y)) {
             printMessage("Winnie was found. Proceed to punish.");
-            tasks.setFoundPooh();
+            tasks.setFoundWinnie();
             return;
         }
         printMessage("Winnie was not found. Returning to the hive");

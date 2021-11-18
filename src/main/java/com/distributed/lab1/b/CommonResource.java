@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class CommonResource {
     private final JSlider slider;
-    private JLabel messageLabel;
+    private final JLabel messageLabel;
     private volatile int semaphore;
 
     public CommonResource(JSlider sliderToChange, JLabel messageLabel) {

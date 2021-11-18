@@ -10,6 +10,7 @@ public class SmokersMediator {
     public static final Runnable dealer = () -> {
         while (true) {
             try {
+                // Waiting when smoking will end
                 smokingDone.acquire();
 
                 // Takes table control

@@ -1,15 +1,15 @@
 package com.distributed.lab5.c;
 
 public class CustomBarrier {
-    int initialParties; //total parties
-    int partiesAwait; //parties yet to arrive
+    int initialParties;
+    int partiesAwait;
     Runnable cyclicBarrierEvent;
 
 
     public CustomBarrier(int parties, Runnable cyclicBarrierEvent) {
-        initialParties=parties;
-        partiesAwait=parties;
-        this.cyclicBarrierEvent=cyclicBarrierEvent;
+        initialParties = parties;
+        partiesAwait = parties;
+        this.cyclicBarrierEvent = cyclicBarrierEvent;
     }
 
 
@@ -18,11 +18,10 @@ public class CustomBarrier {
         partiesAwait--;
 
         //If the current thread is not the last to arrive, thread will wait.
-        if (partiesAwait>0) {
+        if (partiesAwait > 0) {
             this.wait();
-        }
-        else {
-            partiesAwait=initialParties;
+        } else {
+            partiesAwait = initialParties;
 
             notifyAll();
 

@@ -6,15 +6,10 @@ public class Main {
     private static final int AVG_ELEMENT = 10;
     
     private static final int[][] arrays = new int[THREAD_COUNT][];
-    private static long[] nextArraySums = new long[THREAD_COUNT];
     private static long[] arraySums = new long[THREAD_COUNT];
     
     public static void main(String[] args) {
-        var barrier = new CyclicBarrier(THREAD_COUNT, () -> {
-            long[] swap = nextArraySums;
-            nextArraySums = arraySums;
-            arraySums = swap;
-            
+        var barrier = new CustomBarrier(THREAD_COUNT, () -> {
             for (var i = 0; i < THREAD_COUNT; i++) {
                 System.out.printf("Thread %d: [ ", i);
                 for (var element : arrays[i])
@@ -34,9 +29,9 @@ public class Main {
 
             new Thread(() -> {
                 while (!Thread.interrupted()) {
-                    nextArraySums[i] = 0;
+                    arraySums[i] = 0;
                     for (var element : arrays[i])
-                        nextArraySums[i] += element;
+                        arraySums[i] += element;
 
                     try {
                         Thread.sleep(1000);

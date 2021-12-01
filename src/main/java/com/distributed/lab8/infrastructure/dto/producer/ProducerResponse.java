@@ -1,4 +1,4 @@
 package com.distributed.lab8.infrastructure.dto.producer;
 
-public class ProducerResponse {
+public record ProducerResponse(int id, String name) {
 }

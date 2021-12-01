@@ -1,6 +1,11 @@
 package com.distributed.lab8;
 
+
+import com.distributed.lab8.infrastructure.container.DependencyContainer;
+
 public class Main {
-    public void main() {
+    public static void main(String[] args) {
+        var container = new DependencyContainer();
+        container.buildController();
     }
 }

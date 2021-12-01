@@ -1,23 +1,18 @@
 <Software>
-
     <producer id="100" name="Jetbrains">
         <product id="100" producerId="100" name="Rider" price="150" type="DESKTOP"/>
         <product id="101" producerId="100" name="Idea" price="150" type="DESKTOP"/>
         <product id="102" producerId="100" name="Pycharm" price="120" type="DESKTOP"/>
     </producer>
-
     <producer id="101" name="Microsoft">
         <product id="200" producerId="101" name="Office" price="20" type="DESKTOP"/>
         <product id="201" producerId="101" name="VisualStudio" price="0" type="DESKTOP"/>
     </producer>
-
     <producer id="103" name="Netflix Inc.">
-        <product id="300" producerId="100" name="Netflix" price="5" type="WEB"/>
+        <product id="300" producerId="103" name="Netflix" price="5" type="WEB"/>
     </producer>
-
     <producer id="104" name="Apple">
-        <product id="400" producerId="100" name="ITunes" price="0" type="Mobile"/>
-        <product id="401" producerId="100" name="AppStore" price="0" type="Mobile"/>
+        <product id="400" producerId="104" name="ITunes" price="0" type="MOBILE"/>
+        <product id="401" producerId="104" name="AppStore" price="0" type="MOBILE"/>
     </producer>
-
 </Software>

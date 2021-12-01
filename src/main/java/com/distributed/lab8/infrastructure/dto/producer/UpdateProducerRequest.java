@@ -1,4 +1,4 @@
 package com.distributed.lab8.infrastructure.dto.producer;
 
-public class UpdateProducerRequest {
+public record UpdateProducerRequest(int id, String name) {
 }

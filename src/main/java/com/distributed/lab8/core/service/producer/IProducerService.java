@@ -1,5 +1,6 @@
 package com.distributed.lab8.core.service.producer;
 
+import com.distributed.lab8.infrastructure.dto.IdDto;
 import com.distributed.lab8.infrastructure.dto.producer.*;
 
 import java.util.ArrayList;
@@ -10,9 +11,9 @@ public interface IProducerService {
 
     ArrayList<ProducerResponse> getProducers();
 
-    AddProducerResponse addProducer(AddProducerRequest request);
+    IdDto addProducer(AddProducerRequest request);
 
-    UpdateProducerResponse updateProducer(UpdateProducerRequest request);
+    void updateProducer(UpdateProducerRequest request);
 
     void deleteProducerById(int id);
 }

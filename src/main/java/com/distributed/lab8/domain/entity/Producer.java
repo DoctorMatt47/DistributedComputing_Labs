@@ -6,7 +6,12 @@ public class Producer {
     private int id;
     private String name;
 
-    private ArrayList<Product> products;
+    private ArrayList<Product> products = new ArrayList<>();
+
+    public Producer(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Producer(int id, String name, ArrayList<Product> products) {
         this.id = id;

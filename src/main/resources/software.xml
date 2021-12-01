@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Software>
+    <producer id="100" name="Jetbrains">
+        <product id="100" name="Rider" price="150" producerId="100" type="DESKTOP"/>
+        <product id="101" name="Idea" price="150" producerId="100" type="DESKTOP"/>
+        <product id="102" name="Pycharm" price="120" producerId="100" type="DESKTOP"/>
+        <product id="402" name="200" price="421" producerId="100" type="DESKTOP"/>
+        <product id="403" name="200" price="421" producerId="100" type="DESKTOP"/>
+    </producer>
+    <producer id="101" name="Microsoft">
+        <product id="200" name="Office" price="20" producerId="101" type="DESKTOP"/>
+        <product id="201" name="VisualStudio" price="0" producerId="101" type="DESKTOP"/>
+    </producer>
+    <producer id="103" name="Netflix Inc.">
+        <product id="300" name="Netflix" price="5" producerId="103" type="WEB"/>
+    </producer>
+    <producer id="104" name="Apple">
+        <product id="400" name="ITunes" price="0" producerId="104" type="MOBILE"/>
+        <product id="401" name="AppStore" price="0" producerId="104" type="MOBILE"/>
+    </producer>
+</Software>

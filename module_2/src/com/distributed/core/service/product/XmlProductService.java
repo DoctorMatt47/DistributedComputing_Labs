@@ -1,6 +1,6 @@
 package com.distributed.core.service.product;
 
-import com.distributed.core.context.IContext;
+import com.distributed.core.context.IXmlContext;
 import com.distributed.domain.entity.Product;
 import com.distributed.domain.exception.NotFoundException;
 import com.distributed.infrastructure.dto.IdDto;
@@ -11,10 +11,10 @@ import com.distributed.infrastructure.dto.product.UpdateProductRequest;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class ProductService implements IProductService {
-    private final IContext context;
+public class XmlProductService implements IProductService {
+    private final IXmlContext context;
 
-    public ProductService(IContext context) {
+    public XmlProductService(IXmlContext context) {
         this.context = context;
     }
 

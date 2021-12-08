@@ -14,16 +14,7 @@ public class Main {
     static final String PASS = "password";
 
     public static void main(String[] args) {
-        //var container = new DependencyContainer();
-        //container.buildController();
-        Connection connection = null;
-        try {
-            //Class.forName("org.postgresql.Driver");
-            connection = DriverManager
-                    .getConnection(DB_URL, USER, PASS);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        var container = new DependencyContainer();
+        container.buildController();
     }
 }

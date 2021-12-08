@@ -1,6 +1,6 @@
 package com.distributed.core.service.producer;
 
-import com.distributed.core.context.IContext;
+import com.distributed.core.context.IXmlContext;
 import com.distributed.domain.entity.Producer;
 import com.distributed.domain.exception.NotFoundException;
 import com.distributed.infrastructure.dto.IdDto;
@@ -11,11 +11,11 @@ import com.distributed.infrastructure.dto.producer.UpdateProducerRequest;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class ProducerService implements IProducerService {
+public class XmlProducerService implements IProducerService {
 
-    private final IContext context;
+    private final IXmlContext context;
 
-    public ProducerService(IContext context) {
+    public XmlProducerService(IXmlContext context) {
         this.context = context;
     }
 

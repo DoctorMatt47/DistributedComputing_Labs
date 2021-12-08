@@ -5,7 +5,7 @@ import com.distributed.domain.entity.Product;
 
 import java.util.ArrayList;
 
-public interface IContext {
+public interface IXmlContext {
 
     ArrayList<Producer> getProducers();
 

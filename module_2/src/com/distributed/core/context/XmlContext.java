@@ -7,9 +7,8 @@ import com.distributed.domain.entity.Product;
 import com.distributed.domain.exception.InvalidXmlException;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
-public class XmlContext implements IContext {
+public class XmlContext implements IXmlContext {
     private ArrayList<Producer> producers;
     private ArrayList<Product> products;
     private final IXmlValidator validator;

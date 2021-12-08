@@ -2,7 +2,7 @@ package com.distributed.lab8.core.parser;
 
 import com.distributed.lab8.domain.entity.Producer;
 import com.distributed.lab8.domain.entity.Product;
-import com.distributed.lab8.domain.entity.ProductType;
+import com.distributed.lab8.domain.valuetype.ProductType;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;

@@ -1,0 +1,8 @@
+package java.com.distributed.lab1.b;
+
+public class Main {
+
+    public static void main(String[] args) {
+        var gui = new Gui();
+    }
+}

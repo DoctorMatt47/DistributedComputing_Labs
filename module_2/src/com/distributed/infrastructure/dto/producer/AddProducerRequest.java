@@ -1,4 +1,6 @@
 package com.distributed.infrastructure.dto.producer;
 
-public record AddProducerRequest(String name) {
+import java.io.Serializable;
+
+public record AddProducerRequest(String name) implements Serializable {
 }

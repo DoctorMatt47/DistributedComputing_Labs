@@ -1,11 +1,9 @@
 package com.distributed;
 
 
-import com.distributed.infrastructure.container.DependencyContainer;
+import com.distributed.infrastructure.container.ApplicationBuilder;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.io.IOException;
 
 
 public class Main {
@@ -13,8 +11,8 @@ public class Main {
     static final String USER = "postgres";
     static final String PASS = "password";
 
-    public static void main(String[] args) {
-        var container = new DependencyContainer();
-        container.buildController();
+    public static void main(String[] args) throws IOException {
+        var container = new ApplicationBuilder();
+        container.build();
     }
 }

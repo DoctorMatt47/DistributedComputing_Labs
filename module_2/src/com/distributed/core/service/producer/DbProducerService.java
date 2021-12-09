@@ -51,8 +51,8 @@ public class DbProducerService implements IProducerService{
         var maxIdResult = context.executeQuery("select max(id) from producer");
         try {
             maxIdResult.next();
-            var maxId = maxIdResult.getInt("id");
-            context.executeQuery(String.format("insert into producer values (%d, '%s')", maxId + 1, request.name()));
+            var maxId = maxIdResult.getInt(1);
+            context.executeQuery(String.format("insert into producer (id, name) values (%d, '%s')", maxId + 1, request.name()));
             return new IdDto(maxId + 1);
         } catch (SQLException e) {
             e.printStackTrace();

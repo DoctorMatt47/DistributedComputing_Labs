@@ -30,10 +30,12 @@ public class DatabaseContext implements IDatabaseContext {
 
     @Override
     public ResultSet executeQuery(String query) {
-        Statement statement = null;
+        Statement statement;
         try {
             statement = connection.createStatement();
-            return statement.executeQuery(query);
+            if (statement.execute(query)) {
+                return statement.getResultSet();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

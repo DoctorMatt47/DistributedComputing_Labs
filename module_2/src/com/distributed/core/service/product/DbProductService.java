@@ -64,8 +64,9 @@ public class DbProductService implements IProductService {
         try {
             if (!producer.next() || producer.getInt(1) == 0) return null;
             maxIdResult.next();
-            var maxId = maxIdResult.getInt("id");
-            context.executeQuery(String.format("insert into producer values (%d, %d, '%s', %d, '%s')",
+            var maxId = maxIdResult.getInt(1);
+            context.executeQuery(String.format("insert into product (id, producerId, name, price, type)" +
+                            " values (%d, %d, '%s', %d, '%s')",
                     maxId + 1, request.producerId(), request.name(), request.price(), request.type()));
             return new IdDto(maxId + 1);
         } catch (SQLException e) {
